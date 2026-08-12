@@ -22,6 +22,10 @@ class ProdutoController {
     isFavorite = !isFavorite;
   }
 
+  void selectSize(String size) {
+    selectedSize = size;
+  }
+
   void incrementQuantity() {
     quantity++;
     subTotal = product.price * quantity;

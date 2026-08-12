@@ -60,6 +60,9 @@ class _ProductPageState extends State<ProductPage> {
               ),
               const SizedBox(height: 12),
               AppSizeSelector(
+                onPressed: (value) => setState(() {
+                  produtoController.selectSize(value);
+                }),
                 availableSizes: produtoController.product.availableSizes,
                 selectedSize: produtoController.selectedSize,
               ),
@@ -74,7 +77,7 @@ class _ProductPageState extends State<ProductPage> {
               ),
               const SizedBox(height: 12),
               AppQuantitySelector(
-                produtoController: produtoController,
+                quantity: produtoController.quantity,
                 onIncrement: () => setState(() {
                   produtoController.incrementQuantity();
                   produtoController.validateButton();

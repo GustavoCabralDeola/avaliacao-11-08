@@ -1,15 +1,14 @@
-import 'package:avaliacao_componentizacao_stateful_controller/features/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
 
 class AppQuantitySelector extends StatelessWidget {
   const AppQuantitySelector({
     super.key,
-    required this.produtoController,
     this.onIncrement,
     this.onDecrement,
+    required this.quantity,
   });
 
-  final ProdutoController produtoController;
+  final int quantity;
   final VoidCallback? onIncrement;
   final VoidCallback? onDecrement;
 
@@ -33,7 +32,7 @@ class AppQuantitySelector extends StatelessWidget {
         SizedBox(
           width: 48,
           child: Text(
-            '${produtoController.quantity}',
+            '${quantity}',
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 18,
